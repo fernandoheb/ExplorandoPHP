@@ -23,14 +23,26 @@ and open the template in the editor.
         <nav>
             <ul  class="nav">
         <?php
-            $links = array("Operadores"=>"operadores.php",
-                     "Estruturas de Decisão"=>"decisao.php",
-                            "Estruturas de Repetição"=>"repeticao.php");
+         
+           
             
-            foreach($links as $key => $link){
-                
+//            $links = array(10,15,20,50,98);
+//            echo "<br>";
+//            echo $links["Operadores"];
+//            echo "<br>";
+//            echo $links[1];
+//            echo "<br>";
+//            echo $links[2];
+//            echo "<br>";
+                       
+            $links =  array("Operadores"=>"operadores.php",
+                            "Estruturas de Decisão"=>"decisao.php",
+                            "Estruturas de Repetição"=>"repeticao.php");
+           
+            
+            foreach($links as $key => $valor){                
                 echo("<li class='nav-item'>"
-                        . "<a class='nav-link'   href='".$link."' target='frame' > $key </a>"
+                        . "<a class='nav-link'   href='".$valor."' target='frame' > $key </a>"
                         . "</li>"); 
             }
             

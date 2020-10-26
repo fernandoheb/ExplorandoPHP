@@ -127,11 +127,13 @@ and open the template in the editor.
 <?php 
     $x= rand(0, 1000);
     if($x%3==0){
-        if($x >500){ # estrutura aninhada
+        
+        if($x > 500){ # estrutura aninhada
             echo("$x é múltiplo de 3 e maior que quinhentos ");
         } else {
           echo("$x é múltiplo de 3 e menor que quinhentos ");  
         }
+        
     } elseif($x%2==0) { # estrutura encadeada
         echo("$x é Par!");
     }  else {
@@ -166,6 +168,7 @@ switch(x) {
 <code>
 $x= rand(0, 1000);
 $y = $x % 5;
+
 switch($y){        
     case 1: echo ("$x / 5 possui resto um");
             break;
@@ -185,6 +188,7 @@ switch($y){
 <?php 
 $x= rand(0, 1000);
 $y = $x % 5;
+
 switch($y){        
     case 1: echo ("$x / 5 possui resto um");
             break;
