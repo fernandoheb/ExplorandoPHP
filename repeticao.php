@@ -48,9 +48,12 @@ and open the template in the editor.
                         Enquanto Determinada Condição é verdadeira </h4>                            
                     <?php
                     $cont = 0;
+
                     do {
                         $nota = rand(0,10);
+
                         if($nota%2==0){
+
                           echo("$nota é par <br> ");
                           $nota =0;                         
                           continue;
@@ -58,12 +61,14 @@ and open the template in the editor.
                         
                         echo("valor nota: $nota <br>");
                         ++$cont; 
+                       
                         if($cont == 3){
                            echo ("Número máximo de chances!!! <br>");
                            break;
                         } 
                                                 
                     } while($nota < 6);
+                    
                      echo("numero de tentativas $cont <br>");
                      echo("nota final $nota <br>");  
                     ?>                   
@@ -74,15 +79,16 @@ and open the template in the editor.
             <div class = "row">
                 <div>
                     <h2> For - Para  </h2>
-                    <h4> Executa um laço de repetição para uma 
+        <h4> Executa um laço de repetição para uma 
                             determinada quantidade conhecida de Iterações </h4>                            
                     <ol>
                     <?php
                         $item_feira = array("Alface","Tomate","Cebola","Pepino");
+                        
                         $qtd_repeticoes = count($item_feira);
                        
-                        for($contador = 0; $contador < $qtd_repeticoes; $contador++){
-                             echo "<li> $item_feira[$contador]  </li>";                            
+                        for($contador = 0; $contador < $qtd_repeticoes; $contador++){                           
+                            echo "<li> $item_feira[$contador]  </li>";                                                       
                         }                                            
                     ?>
                     </ol>
@@ -133,15 +139,21 @@ and open the template in the editor.
                             <th> Preco</th>   
                         </tr>
                     <?php
-                        $item_feira = array("Alface"=>"3.00",
+                        $item_feira =    $item_feira["Alface"]
+                        array("Alface"=>"3.00",  
                             "Tomate"=>"5.00",
                             "Cebola"=>"4.00",
                             "Pepino"=>"3.00");
                         $nelemento =3;
                         $cont=0;
-                        foreach($item_feira as $produto=>$preco){
+                        foreach($item_feira as $produto=>$preco) {                           
+                            ++$cont;
                             //linha
                             echo "<tr>";
+                                //coluna 1
+                                echo "<td>";
+                                echo "<input type='checkbox' value=$cont name=".'ckb_'.$cont.">";
+                                echo "</td>";
                                 //coluna 1
                                 echo "<td>";
                                 echo $produto;
@@ -151,7 +163,7 @@ and open the template in the editor.
                                 echo $preco;
                                 echo "</td>";
                             echo "</tr>";
-                            ++$cont;
+                            
                             if($cont == $nelemento) break;
                         }
                     ?>
